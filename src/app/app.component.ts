@@ -57,7 +57,11 @@ export class AppComponent {
     this.finalWeight = (currentPrice * baseWeight) / basePrice;
   }
 
-  writeUnit() {
+  writeFirstUnit() {
     this.finalFirstUnit = this.priceCalculator.value.firstUnit as string;
+  }
+
+  writeSecondUnit() {
+    this.finalSecondUnit = this.weightCalculator.value.secondUnit as string;
   }
 }

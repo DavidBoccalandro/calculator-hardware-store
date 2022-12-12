@@ -20,6 +20,7 @@
   .forms-container {
     display: flex;
     justify-content: space-around;
+    gap: 60px;
 
     .form-container {
       display: flex;
@@ -38,7 +39,7 @@
           padding: 10px;
           border-radius: 25px;
           align-items: center;
-          min-width: 120px;
+          min-width: 160px;
           height: 100%;
           color: #ea6666;
           font-size: 1.5rem;
@@ -131,14 +132,132 @@
   display: flex;
   align-items: flex-end;
   margin-bottom: 10px;
+  justify-content: space-between;
 
   label {
     margin-right: 20px;
   }
 
-  input {
-    width: 80px;
-    height: 30px;
-    margin-right: 10px;
+  div {
+    min-width: 105px;
+    display: flex;
+    justify-content: flex-end;
+
+    input {
+      width: 80px;
+      height: 30px;
+      border-radius: 5px;
+      border-color: transparent;
+    }
+  }
+}
+
+.group-container input {
+  width: 80px;
+  height: 30px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+.first-hr,
+.second-hr {
+  margin-bottom: 60px;
+  width: 90%;
+}
+
+.second-hr {
+  border: none;
+  background-color: black;
+  height: 2px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .container {
+    padding: 25px;
+  }
+
+  .container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  #first-form-container,
+  #second-form-container {
+    padding: 50px 25px;
+  }
+
+  .group-container {
+    justify-content: space-between;
+  }
+
+  span {
+    display: flex-end;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 10px;
+  }
+
+  .container h1 {
+    font-size: 1.5em;
+  }
+
+  .forms-container {
+    flex-direction: column;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  #first-form-container,
+  #second-form-container {
+    padding: 35px 25px;
+  }
+
+  hr.first-hr,
+  hr.second-hr {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .form-container {
+    form {
+      margin-bottom: 40px;
+    }
+  }
+
+  label {
+    max-width: 55%;
+  }
+
+  .result {
+    width: 200px;
+    letter-spacing: 0.05em;
+    line-height: 1.5em;
+    border-radius: 25px;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    padding: 20px;
+    color: #44eed2;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .container {
+    max-height: 90vh;
+    padding: 0;
+
+    .forms-container {
+      gap: 40px;
+
+      .form-container form {
+        margin-bottom: 20px;
+      }
+    }
   }
 }

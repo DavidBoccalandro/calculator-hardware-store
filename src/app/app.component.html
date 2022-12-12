@@ -4,7 +4,7 @@
 
   <div class="forms-container">
 
-    <div class="form-container first-form-container">
+    <div class="form-container first-form-container" id="first-form-container">
       <form action="" [formGroup]="priceCalculator" (ngSubmit)="calculatePrice()">
       
         <div class="price-calculator-container">
@@ -20,44 +20,50 @@
               name="unit"
               type="text"
               formControlName="firstUnit"
-              (keyup)="writeUnit()"
+              (keyup)="writeFirstUnit()"
             />
           </div>
 
           <div class="group-container">
             <label for="first-base-weight">Peso original:</label>
-            <input
-              [class.invalid]="priceCalculator.get('firstBaseWeight')?.touched && priceCalculator.get('firstBaseWeight')?.invalid"
-              type="number"
-              name="first-base-weight"
-              id="first-base-weight"
-              formControlName="firstBaseWeight"
-            >
-            {{ finalFirstUnit }}
+            <div>
+              <span>{{ finalFirstUnit }}</span>
+              <input
+                [class.invalid]="priceCalculator.get('firstBaseWeight')?.touched && priceCalculator.get('firstBaseWeight')?.invalid"
+                type="number"
+                name="first-base-weight"
+                id="first-base-weight"
+                formControlName="firstBaseWeight"
+              >
+            </div>
           </div>
 
           <div class="group-container">
             <label for="first-base-price">Precio original:</label>
-            <span style="margin-right: 10px;">$</span>
-            <input
-              [class.invalid]="priceCalculator.get('firstBasePrice')?.touched && priceCalculator.get('firstBasePrice')?.invalid"
-              type="number"
-              name="first-base-price"
-              id="first-base-price"
-              formControlName="firstBasePrice"
-            >
+            <div>
+              <span>$</span>
+              <input
+                [class.invalid]="priceCalculator.get('firstBasePrice')?.touched && priceCalculator.get('firstBasePrice')?.invalid"
+                type="number"
+                name="first-base-price"
+                id="first-base-price"
+                formControlName="firstBasePrice"
+              >
+            </div>
           </div>
 
           <div class="group-container">
             <label for="first-current-weight">Cuánto peso desea el cliente?:</label>
-            <input
-              [class.invalid]="priceCalculator.get('firstCurrentWeight')?.touched && priceCalculator.get('firstCurrentWeight')?.invalid"
-              type="number"
-              name="first-current-weight"
-              id="first-current-weight"
-              formControlName="firstCurrentWeight"
-            >
-            {{ finalFirstUnit }}
+            <div>
+              <span>{{ finalFirstUnit }}</span>
+              <input
+                [class.invalid]="priceCalculator.get('firstCurrentWeight')?.touched && priceCalculator.get('firstCurrentWeight')?.invalid"
+                type="number"
+                name="first-current-weight"
+                id="first-current-weight"
+                formControlName="firstCurrentWeight"
+              >
+            </div>
           </div>
 
         </div>
@@ -69,7 +75,7 @@
 
       </form>
 
-      <hr style="margin-bottom:60px; width: 90%;">
+      <hr class="first-hr" >
 
       <div class="price-result result">
         <span>Precio FINAL:</span>
@@ -77,7 +83,7 @@
       </div>
     </div>
 
-    <div class="form-container second-form-container">
+    <div class="form-container second-form-container" id="second-form-container">
       <form action="" [formGroup]="weightCalculator" (ngSubmit)="calculateWeight()">
       
         <div class="weight-calculator-container">
@@ -93,41 +99,49 @@
               name="unit"
               type="text"
               formControlName="secondUnit"
+              (keyup)="writeSecondUnit()"
             />
           </div>
 
           <div class="group-container">
             <label for="second-base-price">Precio original:</label>
-            <span style="margin-right: 10px;">$</span>
-            <input
-              [class.invalid]="weightCalculator.get('secondBasePrice')?.touched && priceCalculator.get('secondBasePrice')?.invalid"
-              type="number"
-              name="second-base-price"
-              id="second-base-price"
-              formControlName="secondBasePrice"
-            >
+            <div>
+              <span>$</span>
+              <input
+                [class.invalid]="weightCalculator.get('secondBasePrice')?.touched && priceCalculator.get('secondBasePrice')?.invalid"
+                type="number"
+                name="second-base-price"
+                id="second-base-price"
+                formControlName="secondBasePrice"
+              >
+            </div>
           </div>
 
           <div class="group-container">
             <label for="second-base-weight">Peso original:</label>
-            <input
-              [class.invalid]="weightCalculator.get('secondBaseWeight')?.touched && priceCalculator.get('secondBaseWeight')?.invalid"
-              type="number"
-              name="second-base-weight"
-              id="second-base-weight"
-              formControlName="secondBaseWeight"
-            >
+            <div>
+              <span>{{ finalSecondUnit }}</span>
+              <input
+                [class.invalid]="weightCalculator.get('secondBaseWeight')?.touched && priceCalculator.get('secondBaseWeight')?.invalid"
+                type="number"
+                name="second-base-weight"
+                id="second-base-weight"
+                formControlName="secondBaseWeight"
+              >
+            </div>
           </div>
 
           <div class="group-container">
             <label for="second-current-price">Cuánto dinero trajo el cliente?</label>
-            <span style="margin-right: 10px;">$</span>
-            <input
-              type="number"
-              name="second-current-price"
-              id="second-current-price"
-              formControlName="secondCurrentPrice"
-            >
+            <div>
+              <span>$</span>
+              <input
+                type="number"
+                name="second-current-price"
+                id="second-current-price"
+                formControlName="secondCurrentPrice"
+              >
+            </div>
           </div>
 
         </div>
@@ -139,7 +153,7 @@
       
       </form>
 
-      <hr style="margin-bottom: 60px; width: 90%; border:none; background-color: black; height: 2px;">
+      <hr class="second-hr" >
 
       <div class="weight-result result">
         <span>Medida FINAL:</span>
